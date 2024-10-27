@@ -30,18 +30,20 @@ function City() {
   };
 
   return (
-    <>
+    <><div>
       <input
         type="text"
         placeholder="Enter city name"
         value={city}
         onChange={(e) => setCity(e.target.value)}
       />
-      <button type="submit" onClick={cityDetails}>
+      <button type="button" onClick={cityDetails}>
         Search
        
       </button>
-      {loading && <p>Loading data…</p>}
+      </div>
+      <br/> <br/>
+      {loading && (<p>Loading data…</p>)}
      
 
       {weatherData && (
