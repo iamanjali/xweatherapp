@@ -7,7 +7,7 @@ function City() {
   const [weatherData, setWeatherData] = useState(null);
 
   const cityDetails = async () => {
-    if (!city.trim()) return;
+    if (!city.trim().toLowerCase()) return;
 
     const key = "2939b0fc66e24a55912144702242610";
     const url = `https://api.weatherapi.com/v1/current.json?key=${key}&q=${city}`;
@@ -39,8 +39,9 @@ function City() {
       />
       <button type="submit" onClick={cityDetails}>
         Search
+        {loading && <p>Loading data…</p>}
       </button>
-      {loading && <p>Loading data…</p>}
+     
 
       {weatherData && (
         <div className="weather-cards">
