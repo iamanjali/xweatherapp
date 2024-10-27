@@ -39,8 +39,9 @@ function City() {
       />
       <button type="submit" onClick={cityDetails}>
         Search
-        {loading && <p>Loading data…</p>}
+       
       </button>
+      {loading && <p>Loading data…</p>}
      
 
       {weatherData && (
