@@ -23,10 +23,10 @@ function City() {
       const data = await response.json();
       setWeatherData(data);
     } catch (error) {
-      alert("Failed to fetch weather data");}
-    // } finally {
-    //   setLoading(false);
-    // }
+      alert("Failed to fetch weather data");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -35,7 +35,7 @@ function City() {
         type="text"
         placeholder="Enter city name"
         value={city}
-        onChange={(e) => setCity(e.target.value.toLowerCase())}
+        onChange={(e) => setCity(e.target.value)}
       />
       <button type="submit" onClick={cityDetails}>
         Search
