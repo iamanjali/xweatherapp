@@ -24,6 +24,7 @@ function City() {
       setWeatherData(data);
     } catch (error) {
       alert("Failed to fetch weather data");
+      setLoading(false);
     } finally {
       setLoading(false);
     }
@@ -40,11 +41,10 @@ function City() {
       <button type="submit" onClick={cityDetails}>
         Search
       </button>
-      
+      {loading && <p>Loading data…</p>}
 
       {weatherData && (
         <div className="weather-cards">
-            {loading && <p>Loading data…</p>}
           <div className="weather-card">
             <h3>Temperature</h3>
             <p>{weatherData.current.temp_c}°C</p>
