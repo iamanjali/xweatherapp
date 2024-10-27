@@ -23,10 +23,10 @@ function City() {
       const data = await response.json();
       setWeatherData(data);
     } catch (error) {
-      alert("Failed to fetch weather data");
-    } finally {
-      setLoading(false);
-    }
+      alert("Failed to fetch weather data");}
+    // } finally {
+    //   setLoading(false);
+    // }
   };
 
   return (
